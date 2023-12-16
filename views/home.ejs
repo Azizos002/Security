@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: url('final.jpg') no-repeat center center fixed;
+            /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+
+
+
+        }
+
+        #navbar {
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            height: 50px;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: border-right-color 0.3s;
+            /* Add transition for smooth color change */
+        }
+
+        #navbar a:hover {
+            background: #3498db;
+            /* Change background color on hover */
+            border-bottom: 2px solid #3498db;
+
+            color: white;
+            /* Change text color on hover */
+            border-right-color: #3498db;
+            /* Change border color on hover */
+        }
+
+        @media screen and (max-width: 600px) {
+            #navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        #header.content {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            
+            text-align: justify;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        #header h1 {
+            color: #333;
+        }
+
+        #header p {
+            color: #555;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        #cryptage.content {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input:hover {
+            border: 2px solid #3498db;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            /* Change this color to your choice */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            margin: 0 auto;
+            /* Center the button horizontally */
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            /* Change this color to your choice */
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #project-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        #project-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #project-details {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        // Function to display the selected content and hide the others
+        function showContent(contentId) {
+            // Get all content sections
+            var contents = document.getElementsByClassName('content');
+
+            // Loop through all content sections and hide them
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+
+            // Show the selected content
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="navbar">
+        <a href="#" onclick="showContent('header')">Home</a>
+        <a href="#" onclick="showContent('cryptage')">Crypter</a>
+    </div>
+
+    <div id="container">
+        <div id="header" class="content">
+            <h1>Introduction</h1>
+            <p>Le cryptage, également connu sous le nom de chiffrement, est un concept fondamental dans le domaine de la
+                sécurité de l'information et de la communication. Il s'agit du processus de conversion d'un texte clair,
+                souvent appelé texte en clair, en une forme inintelligible connue sous le nom de texte chiffré. La
+                principale finalité du cryptage est de sécuriser des informations sensibles en les rendant difficiles à
+                comprendre pour des individus non autorisés.
+
+                Cette méthode complexe utilise divers algorithmes et clés pour transformer les données, garantissant que
+                même si elles sont interceptées, la partie non autorisée serait confrontée à des défis importants pour
+                déchiffrer le message crypté. Le cryptage joue un rôle crucial dans la protection de la vie privée, la
+                préservation de la confidentialité des données sensibles lors de leur transmission, et renforce la
+                sécurité globale des communications numériques.
+
+                Au fil des années, les cryptographes ont développé diverses techniques de chiffrement, allant des
+                méthodes classiques telles que le chiffre de César à des algorithmes plus avancés tels que RSA et AES.
+                L'évolution du cryptage témoigne d'un effort continu pour anticiper les menaces potentielles, offrant
+                ainsi une couche de défense cruciale dans notre monde de plus en plus interconnecté et axé sur les
+                données.</p>
+        </div>
+        <div id="cryptage" class="content">
+            <h2>Other Methodes</h2>
+            <label for="text">Text :</label>
+            <input type="text" id="text" placeholder="Entrez le texte">
+
+            <label for="key">Key chiff :</label>
+            <input type="text" id="key" placeholder="Entrez la clé de chiffrement">
+
+            <label for="method">Methodes :</label>
+            <select id="method" onchange="updateKeyInputs()">
+                <option value="cesar">César</option>
+                <option value="vigenere">Vigenère</option>
+                <option value="affine">Code Affine</option>
+            </select>
+
+            <div id="key-a-container">
+                <label for="key-a">Key-a :</label>
+                <input type="number" id="key-a" placeholder="Entrez la valeur de 'a'">
+            </div>
+
+            <div id="key-b-container">
+                <label for="key-b">Key-b:</label>
+                <input type="number" id="key-b" placeholder="Entrez la valeur de 'b'">
+            </div>
+
+            <button onclick="encrypt()">Chiffrer</button>
+            <button onclick="decrypt()">Déchiffrer</button>
+
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+
+        // Fonction de chiffrement César
+        function cesarCipher(text, shift) {
+            let result = "";
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                if (char.match(/[a-zA-Z]/)) {
+                    let start = char === char.toLowerCase() ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+                    result += String.fromCharCode((char.charCodeAt(0) - start + shift) % 26 + start);
+                } else {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        // Fonction de déchiffrement César
+        function cesarDecipher(text, shift) {
+            return cesarCipher(text, 26 - shift); // Utilisez la fonction de chiffrement avec le complément à 26
+        }
+
+        // Fonction de chiffrement Vigenère
+        function vigenereCipher(text, key) {
+            let result = "";
+            key = key.toLowerCase();
+            for (let i = 0, j = 0; i < text.length; i++) {
+                let char = text[i];
+                if (char.match(/[a-zA-Z]/)) {
+                    let start = char === char.toLowerCase() ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+                    let shift = key[j].charCodeAt(0) - 'a'.charCodeAt(0);
+                    result += String.fromCharCode((char.charCodeAt(0) - start + shift) % 26 + start);
+                    j = (j + 1) % key.length;
+                } else {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        // Fonction de déchiffrement Vigenère
+        function vigenereDecipher(text, key) {
+            let result = "";
+            key = key.toLowerCase();
+            for (let i = 0, j = 0; i < text.length; i++) {
+                let char = text[i];
+                if (char.match(/[a-zA-Z]/)) {
+                    let start = char === char.toLowerCase() ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+                    let shift = key[j].charCodeAt(0) - 'a'.charCodeAt(0);
+                    result += String.fromCharCode((char.charCodeAt(0) - start - shift + 26) % 26 + start);
+                    j = (j + 1) % key.length;
+                } else {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        // Fonction de chiffrement affine
+        function affineCipher(text, a, b) {
+            let result = "";
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                if (char.match(/[a-zA-Z]/)) {
+                    let start = char === char.toLowerCase() ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+                    result += String.fromCharCode(((char.charCodeAt(0) - start) * a + b) % 26 + start);
+                } else {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        // Fonction de déchiffrement affine
+        function affineDecipher(text, a, b) {
+            let modInverse = function (a, m) {
+                a = (a % m + m) % m;
+                for (let x = 1; x < m; x++) {
+                    if ((a * x) % m === 1) {
+                        return x;
+                    }
+                }
+                return 1;
+            };
+
+            let result = "";
+            let aInverse = modInverse(a, 26);
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                if (char.match(/[a-zA-Z]/)) {
+                    let start = char === char.toLowerCase() ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+                    result += String.fromCharCode((aInverse * (char.charCodeAt(0) - start - b + 26)) % 26 + start);
+                } else {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        // Fonction pour valider si une valeur est un entier
+        function validateIntegerInput(value) {
+            return /^\d+$/.test(value);
+        }
+
+        // Fonction pour chiffrer le texte en fonction de la méthode sélectionnée
+        function encrypt() {
+            let inputText = document.getElementById("text").value;
+            let method = document.getElementById("method").value;
+            let resultElement = document.getElementById("result");
+
+            let result = "";
+
+            switch (method) {
+                case "cesar":
+                    hideAffineKeys();
+                    let shift = parseInt(document.getElementById("key").value);
+                    if (!validateIntegerInput(shift)) {
+                        alert("Veuillez entrer un entier pour la clé de chiffrement César.");
+                        return;
+                    }
+                    result = cesarCipher(inputText, shift);
+                    break;
+                case "vigenere":
+                    hideAffineKeys();
+                    let vigenereKey = document.getElementById("key").value;
+                    if (!/^[a-zA-Z]+$/.test(vigenereKey)) {
+                        alert("Veuillez entrer une clé de chiffrement Vigenère valide (lettres seulement).");
+                        return;
+                    }
+                    result = vigenereCipher(inputText, vigenereKey);
+                    break;
+                case "affine":
+                    showAffineKeys();
+                    let a = parseInt(document.getElementById("key-a").value);
+                    let b = parseInt(document.getElementById("key-b").value);
+                    if (!validateIntegerInput(a) || !validateIntegerInput(b)) {
+                        alert("Veuillez entrer des entiers pour les clés 'a' et 'b' du chiffrement affine.");
+                        return;
+                    }
+                    result = affineCipher(inputText, a, b);
+                    break;
+                default:
+                    hideAffineKeys();
+                    break;
+            }
+
+            resultElement.textContent = "Résultat : " + result;
+        }
+
+        // Fonction pour déchiffrer le texte en fonction de la méthode sélectionnée
+        function decrypt() {
+            let inputText = document.getElementById("text").value;
+            let method = document.getElementById("method").value;
+            let resultElement = document.getElementById("result");
+
+            let result = "";
+
+            switch (method) {
+                case "cesar":
+                    hideAffineKeys();
+                    let shift = parseInt(document.getElementById("key").value);
+                    if (!validateIntegerInput(shift)) {
+                        alert("Veuillez entrer un entier pour la clé de chiffrement César.");
+                        return;
+                    }
+                    result = cesarDecipher(inputText, shift);
+                    break;
+                case "vigenere":
+                    hideAffineKeys();
+                    let vigenereKey = document.getElementById("key").value;
+                    if (!/^[a-zA-Z]+$/.test(vigenereKey)) {
+                        alert("Veuillez entrer une clé de chiffrement Vigenère valide (lettres seulement).");
+                        return;
+                    }
+                    result = vigenereDecipher(inputText, vigenereKey);
+                    break;
+                case "affine":
+                    showAffineKeys();
+                    let a = parseInt(document.getElementById("key-a").value);
+                    let b = parseInt(document.getElementById("key-b").value);
+                    if (!validateIntegerInput(a) || !validateIntegerInput(b)) {
+                        alert("Veuillez entrer des entiers pour les clés 'a' et 'b' du chiffrement affine.");
+                        return;
+                    }
+                    result = affineDecipher(inputText, a, b);
+                    break;
+                default:
+                    hideAffineKeys();
+                    break;
+            }
+
+            resultElement.textContent = "Résultat : " + result;
+        }
+
+        // Fonction pour afficher/masquer les champs de clés 'a' et 'b' lors de la sélection de la méthode affine
+        function updateKeyInputs() {
+            let method = document.getElementById("method").value;
+            if (method === "affine") {
+                showAffineKeys();
+            } else {
+                hideAffineKeys();
+            }
+        }
+
+        // Fonction pour afficher les champs de clé 'a' et 'b'
+        function showAffineKeys() {
+            document.getElementById("key-a-container").style.display = "block";
+            document.getElementById("key-b-container").style.display = "block";
+        }
+
+        // Fonction pour masquer les champs de clé 'a' et 'b'
+        function hideAffineKeys() {
+            document.getElementById("key-a-container").style.display = "none";
+            document.getElementById("key-b-container").style.display = "none";
+        }
+
+        // Appel initial pour masquer les clés 'a' et 'b'
+        hideAffineKeys();
+
+    </script>
+</body>
+
+</html>
